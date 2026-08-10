@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About Chaniel</title>
+    <title>CEE | About Me</title>
 
     <style>
         * {
@@ -14,135 +15,69 @@
         }
 
         body {
-            background: #050509;
-            color: white;
             font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
         }
 
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(5, 5, 9, 0.9);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid #20202c;
-            z-index: 1000;
+            padding: 25px 8%;
+            border-bottom: 1px solid #222;
         }
 
         .logo {
-            font-size: 25px;
+            font-size: 28px;
             font-weight: bold;
-            letter-spacing: 3px;
-        }
-
-        .logo span {
-            color: #6c63ff;
+            letter-spacing: 4px;
         }
 
         nav a {
-            color: #ccc;
+            color: white;
             text-decoration: none;
             margin-left: 25px;
             font-size: 15px;
-            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #6c63ff;
+            color: #888;
         }
 
         .about {
-            min-height: 100vh;
-            padding: 150px 8% 80px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .small-text {
-            color: #6c63ff;
-            letter-spacing: 4px;
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-        .line {
-            width: 60px;
-            height: 4px;
-            background: #6c63ff;
-            margin-bottom: 40px;
-        }
-
-        .profile-pic {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid #6c63ff;
-            padding: 5px;
-            box-shadow: 0 0 40px rgba(108, 99, 255, 0.4);
-            margin-bottom: 30px;
+            min-height: 80vh;
+            padding: 100px 8%;
+            max-width: 900px;
         }
 
         .about p {
-            max-width: 750px;
-            color: #aaa;
-            font-size: 18px;
-            line-height: 1.8;
+            color: #888;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .about h1 {
+            font-size: 70px;
+            margin-bottom: 30px;
+        }
+
+        .about h2 {
+            font-size: 28px;
             margin-bottom: 20px;
         }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 35px;
-        }
-
-        .skill {
-            padding: 10px 18px;
-            background: #101017;
-            border: 1px solid #292938;
-            border-radius: 25px;
+        .about-text {
             color: #aaa;
+            font-size: 18px;
+            line-height: 1.8;
         }
 
         footer {
-            text-align: center;
-            padding: 35px;
-            border-top: 1px solid #181820;
+            padding: 25px 8%;
+            border-top: 1px solid #222;
             color: #666;
-        }
-
-        footer span {
-            color: #6c63ff;
-        }
-
-        @media (max-width: 700px) {
-            nav {
-                padding: 18px 5%;
-            }
-
-            .logo {
-                font-size: 19px;
-            }
-
-            nav a {
-                margin-left: 8px;
-                font-size: 12px;
-            }
-
-            h1 {
-                font-size: 45px;
-            }
+            text-align: center;
         }
     </style>
 </head>
@@ -150,61 +85,47 @@
 <body>
 
     <nav>
-
-        <div class="logo">
-            CHANIEL<span>.</span>
-        </div>
+        <div class="logo">CEE</div>
 
         <div>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="project.html">Projects</a>
-            <a href="contact.html">Contact</a>
+            <a href="projects.html">Projects</a>
         </div>
-
     </nav>
 
+    <section class="about">
 
-    <div class="about">
+        <p>ABOUT ME</p>
 
-        <div class="small-text">GET TO KNOW ME</div>
+        <h1>I'm CEE.</h1>
 
-        <h1>About Me</h1>
+        <h2>Student. Creator. Future Developer.</h2>
 
-        <div class="line"></div>
+        <div class="about-text">
+            <p>
+                I'm a student who is learning how to build websites
+                and explore the world of technology.
+            </p>
 
-        <img src="me.jpg" alt="Chaniel" class="profile-pic">
+            <p>
+                I'm interested in creativity, design and coding.
+                I'm still learning, but every project helps me
+                improve and learn something new.
+            </p>
 
-        <p>
-            Hey, I'm Chaniel 👋
-        </p>
-
-        <p>
-            I'm learning coding and web design and building
-            my own projects from scratch.
-        </p>
-
-        <p>
-            I'm interested in creativity, technology and
-            developing skills that can help me build my future.
-        </p>
-
-        <div class="skills">
-
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">Web Design</div>
-            <div class="skill">Creativity</div>
-            <div class="skill">Learning</div>
-
+            <p>
+                My goal is to become a developer and build
+                websites and digital projects that I'm proud of.
+            </p>
         </div>
 
-    </div>
-
+    </section>
 
     <footer>
-        © 2026 <span>CHANIEL</span> — Built from scratch.
+        © 2026 CEE. Built from scratch.
     </footer>
 
 </body>
 </html>
+```

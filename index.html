@@ -1,363 +1,741 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CHANIEL | Creative Personal Brand</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>CHANIEL | Creative Personal Brand</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<style>
 
-        body {
-            background: #050509;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(5, 5, 9, 0.85);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            z-index: 1000;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
+body {
+    background: #050509;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
 
-        .logo span {
-            color: #6c63ff;
-        }
 
-        nav a {
-            color: #ccc;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-            transition: 0.3s;
-        }
+/* NAVIGATION */
 
-        nav a:hover {
-            color: #6c63ff;
-        }
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 120px 20px 60px;
-            background:
-                radial-gradient(circle at 50% 30%, rgba(108,99,255,0.18), transparent 35%),
-                #050509;
-        }
+    padding: 20px 8%;
 
-        .hero-content {
-            max-width: 800px;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .profile-pic {
-            width: 190px;
-            height: 190px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid #6c63ff;
-            padding: 5px;
-            box-shadow: 0 0 40px rgba(108,99,255,0.5);
-            margin-bottom: 30px;
-        }
+    background: rgba(5, 5, 9, 0.85);
+    backdrop-filter: blur(15px);
 
-        .small-text {
-            color: #6c63ff;
-            letter-spacing: 4px;
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 
-        h1 {
-            font-size: clamp(60px, 12vw, 120px);
-            letter-spacing: 8px;
-            line-height: 1;
-            margin-bottom: 20px;
-        }
+    z-index: 1000;
+}
 
-        .hero h2 {
-            font-size: 25px;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
 
-        .hero p {
-            color: #999;
-            font-size: 18px;
-            line-height: 1.7;
-            max-width: 600px;
-            margin: auto;
-        }
+.logo span {
+    color: #6c63ff;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 15px 30px;
-            border-radius: 30px;
-            background: #6c63ff;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 0 25px rgba(108,99,255,0.4);
-            transition: 0.3s;
-        }
 
-        .button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 40px rgba(108,99,255,0.7);
-        }
+/* DESKTOP MENU */
 
-        /* Sections */
-        section {
-            padding: 100px 8%;
-            max-width: 1200px;
-            margin: auto;
-        }
+.nav-links {
+    display: flex;
+    align-items: center;
+}
 
-        .section-title {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
 
-        .section-line {
-            width: 60px;
-            height: 4px;
-            background: #6c63ff;
-            margin-bottom: 40px;
-        }
+    margin-left: 25px;
 
-        .about-text {
-            color: #aaa;
-            font-size: 18px;
-            line-height: 1.8;
-            max-width: 800px;
-        }
+    font-size: 15px;
 
-        /* Cards */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
+    transition: 0.3s;
+}
 
-        .card {
-            background: linear-gradient(145deg, #101017, #08080d);
-            border: 1px solid #20202c;
-            border-radius: 20px;
-            padding: 30px;
-            transition: 0.3s;
-        }
+.nav-links a:hover {
+    color: #6c63ff;
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: #6c63ff;
-            box-shadow: 0 15px 40px rgba(108,99,255,0.15);
-        }
 
-        .card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
+/* MOBILE MENU BUTTON */
 
-        .card p {
-            color: #999;
-            line-height: 1.7;
-        }
+.menu-button {
+    display: none;
 
-        .tag {
-            display: inline-block;
-            margin-top: 20px;
-            margin-right: 5px;
-            padding: 6px 12px;
-            border-radius: 20px;
-            background: #161525;
-            color: #8c86ff;
-            font-size: 12px;
-        }
+    background: none;
+    border: none;
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #181820;
-            color: #666;
-        }
+    color: white;
 
-        footer span {
-            color: #6c63ff;
-        }
+    font-size: 28px;
 
-        /* Mobile */
-        @media (max-width: 700px) {
+    cursor: pointer;
+}
 
-            nav {
-                padding: 18px 5%;
-            }
 
-            .logo {
-                font-size: 19px;
-            }
+/* HERO */
 
-            nav a {
-                margin-left: 10px;
-                font-size: 12px;
-            }
+.hero {
+    min-height: 100vh;
 
-            h1 {
-                letter-spacing: 4px;
-            }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-            section {
-                padding: 70px 7%;
-            }
-        }
-    </style>
+    text-align: center;
+
+    padding: 120px 20px 60px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(108,99,255,0.18),
+            transparent 35%
+        ),
+        #050509;
+}
+
+.hero-content {
+    max-width: 800px;
+
+    animation: fadeUp 1s ease forwards;
+}
+
+.profile-pic {
+    width: 190px;
+    height: 190px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #6c63ff;
+
+    padding: 5px;
+
+    box-shadow:
+        0 0 40px rgba(108,99,255,0.5);
+
+    margin-bottom: 30px;
+}
+
+.small-text {
+    color: #6c63ff;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(60px, 12vw, 120px);
+
+    letter-spacing: 8px;
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 25px;
+
+    color: #ddd;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #999;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+/* BUTTON */
+
+.button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    background: #6c63ff;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 25px rgba(108,99,255,0.4);
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 40px rgba(108,99,255,0.7);
+}
+
+
+/* SECTIONS */
+
+section {
+    padding: 100px 8%;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+.section-title {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.section-line {
+    width: 60px;
+
+    height: 4px;
+
+    background: #6c63ff;
+
+    margin-bottom: 40px;
+}
+
+.about-text {
+    color: #aaa;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    max-width: 800px;
+}
+
+
+/* PROJECT CARDS */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: 25px;
+}
+
+.card {
+    background:
+        linear-gradient(
+            145deg,
+            #101017,
+            #08080d
+        );
+
+    border: 1px solid #20202c;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    transition: 0.3s;
+
+    text-decoration: none;
+
+    color: white;
+
+    display: block;
+
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #6c63ff;
+
+    box-shadow:
+        0 15px 40px
+        rgba(108,99,255,0.15);
+}
+
+.card h3 {
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #999;
+
+    line-height: 1.7;
+}
+
+.tag {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    margin-right: 5px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #161525;
+
+    color: #8c86ff;
+
+    font-size: 12px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    border-top: 1px solid #181820;
+
+    color: #666;
+}
+
+footer span {
+    color: #6c63ff;
+}
+
+.social-title {
+    color: #6c63ff;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+.social-links {
+    margin-bottom: 25px;
+}
+
+.social-links a {
+    display: inline-block;
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    margin: 0 10px;
+
+    padding: 10px 18px;
+
+    border: 1px solid #20202c;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #6c63ff;
+
+    border-color: #6c63ff;
+
+    transform: translateY(-3px);
+}
+
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+        right: 5%;
+
+        width: 180px;
+
+        padding: 20px;
+
+        display: none;
+
+        flex-direction: column;
+
+        background: #101017;
+
+        border: 1px solid #20202c;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+
+        font-size: 15px;
+
+        text-align: center;
+    }
+
+    h1 {
+        letter-spacing: 4px;
+    }
+
+    section {
+        padding: 70px 7%;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <nav>
-        <div class="logo">CHANIEL<span>.</span></div>
 
-        <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="contact.html">Contact</a>
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        CHANIEL<span>.</span>
+    </div>
+
+
+    <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu"
+    >
+        ☰
+    </button>
+
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="#home" onclick="closeMenu()">
+            Home
+        </a>
+
+        <a href="#about" onclick="closeMenu()">
+            About
+        </a>
+
+        <a href="#projects" onclick="closeMenu()">
+            Projects
+        </a>
+
+        <a href="contact.html" onclick="closeMenu()">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img
+            src="me.jpg"
+            alt="Chaniel"
+            class="profile-pic"
+        >
+
+        <div class="small-text">
+            WELCOME TO MY WORLD
         </div>
-    </nav>
+
+        <h1>
+            CHANIEL
+        </h1>
+
+        <h2>
+            CREATIVE • CODER • DREAMER
+        </h2>
+
+        <p>
+            I'm learning to build things on the internet,
+            explore creativity and turn ideas into reality.
+        </p>
+
+        <a
+            href="project.html"
+            class="button"
+        >
+            Explore My Work →
+        </a>
+
+    </div>
+
+</div>
 
 
-    <!-- HERO -->
+<!-- ABOUT -->
 
-    <div class="hero" id="home">
+<section id="about">
 
-        <div class="hero-content">
+    <h2 class="section-title">
+        About Me
+    </h2>
 
-            <img src="me.jpg" alt="Chaniel" class="profile-pic">
+    <div class="section-line"></div>
 
-            <div class="small-text">WELCOME TO MY WORLD</div>
+    <p class="about-text">
 
-            <h1>CHANIEL</h1>
+        I'm Chaniel. I'm currently learning coding
+        and web design while building my own projects
+        from scratch.
 
-            <h2>CREATIVE • CODER • DREAMER</h2>
+        This website is part of my journey as I learn,
+        experiment and create.
+
+    </p>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+        My Projects
+    </h2>
+
+    <div class="section-line"></div>
+
+    <div class="cards">
+
+
+        <a
+            href="project.html"
+            class="card"
+        >
+
+            <h3>
+                🌐 My First Website
+            </h3>
 
             <p>
-                I'm learning to build things on the internet,
-                explore creativity and turn ideas into reality.
+                My first website created while learning
+                HTML and CSS.
             </p>
 
-            <a href="#projects" class="button">
-                Explore My Work →
-            </a>
+            <span class="tag">
+                HTML
+            </span>
+
+            <span class="tag">
+                CSS
+            </span>
+
+        </a>
+
+
+        <div class="card">
+
+            <h3>
+                💻 Coding Journey
+            </h3>
+
+            <p>
+                A collection of things I'm learning as I
+                improve my web development skills.
+            </p>
+
+            <span class="tag">
+                CODING
+            </span>
+
+            <span class="tag">
+                WEB DESIGN
+            </span>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🚀 Future Projects
+            </h3>
+
+            <p>
+                More creative projects coming soon as
+                I continue developing my skills.
+            </p>
+
+            <span class="tag">
+                COMING SOON
+            </span>
 
         </div>
 
     </div>
 
-
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <h2 class="section-title">About Me</h2>
-
-        <div class="section-line"></div>
-
-        <p class="about-text">
-            I'm Chaniel. I'm currently learning coding and web design
-            while building my own projects from scratch.
-            This website is part of my journey as I learn,
-            experiment and create.
-        </p>
-
-    </section>
+</section>
 
 
-    <!-- PROJECTS -->
+<!-- FOOTER -->
 
-    <section id="projects">
+<footer>
 
-        <h2 class="section-title">My Projects</h2>
+    <div class="social-title">
+        FIND ME ONLINE
+    </div>
 
-        <div class="section-line"></div>
+    <div class="social-links">
 
-        <div class="cards">
+        <a
+            href="https://www.instagram.com/chan.iel_/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Instagram
+        </a>
 
-            <div class="card">
-                <h3>🌐 My First Website</h3>
+        <a
+            href="https://github.com/chanieldev"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            GitHub
+        </a>
 
-                <p>
-                    My first website created while learning
-                    HTML and CSS.
-                </p>
+    </div>
 
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-            </div>
+    <p>
 
+        © 2026
+        <span>CHANIEL</span>
+        — Built from scratch.
 
-            <div class="card">
-                <h3>💻 Coding Journey</h3>
+    </p>
 
-                <p>
-                    A collection of things I'm learning as I
-                    improve my web development skills.
-                </p>
-
-                <span class="tag">CODING</span>
-                <span class="tag">WEB DESIGN</span>
-            </div>
-
-
-            <div class="card">
-                <h3>🚀 Future Projects</h3>
-
-                <p>
-                    More creative projects coming soon as
-                    I continue developing my skills.
-                </p>
-
-                <span class="tag">COMING SOON</span>
-            </div>
-
-        </div>
-
-    </section>
+</footer>
 
 
-    <footer>
-        © 2026 <span>CHANIEL</span> — Built from scratch.
-    </footer>
+<!-- MOBILE MENU SCRIPT -->
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("navLinks");
+
+    menu.classList.toggle("active");
+
+}
+
+
+function closeMenu() {
+
+    const menu = document.getElementById("navLinks");
+
+    menu.classList.remove("active");
+
+}
+
+</script>
+
 
 </body>
+
 </html>
+```
