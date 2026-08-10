@@ -1,0 +1,11 @@
+```json
+{
+    "name": "CHANIEL",
+    "short_name": "CHANIEL",
+    "description": "Chaniel's creative personal website.",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#050509",
+    "theme_color": "#6c63ff"
+}
+```
