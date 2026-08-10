@@ -4,435 +4,456 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact | CHANIEL</title>
+<title>Contact | CHANIEL</title>
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            background: #050509;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
+body {
+    background: #050509;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
 
 
-        /* NAVIGATION */
+/* BACKGROUND GLOW */
 
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+body::before {
+    content: "";
+    position: fixed;
 
-            padding: 20px 8%;
+    width: 500px;
+    height: 500px;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    background: #6c63ff;
 
-            background: rgba(5,5,9,0.85);
+    filter: blur(180px);
 
-            backdrop-filter: blur(15px);
+    opacity: 0.08;
 
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+    top: 20%;
+    left: 50%;
 
-            z-index: 1000;
-        }
+    transform: translateX(-50%);
 
+    pointer-events: none;
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
+    z-index: -1;
+}
 
 
-        .logo span {
-            color: #6c63ff;
-        }
+/* NAVIGATION */
 
+nav {
+    position: fixed;
 
-        /* DESKTOP NAV */
+    top: 0;
+    left: 0;
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
+    width: 100%;
 
+    padding: 20px 8%;
 
-        .nav-links a {
-            color: #ccc;
+    display: flex;
 
-            text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
 
-            margin-left: 25px;
+    background: rgba(5,5,9,0.85);
 
-            font-size: 15px;
+    backdrop-filter: blur(15px);
 
-            transition: 0.3s;
-        }
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 
+    z-index: 1000;
+}
 
-        .nav-links a:hover {
-            color: #6c63ff;
-        }
+.logo {
+    font-size: 25px;
 
+    font-weight: bold;
 
-        /* MOBILE MENU */
+    letter-spacing: 3px;
+}
 
-        .menu-button {
-            display: none;
+.logo span {
+    color: #6c63ff;
+}
 
-            background: none;
 
-            border: none;
+/* NAV LINKS */
 
-            color: white;
+.nav-links {
+    display: flex;
 
-            font-size: 28px;
+    align-items: center;
+}
 
-            cursor: pointer;
-        }
+.nav-links a {
 
+    color: #ccc;
 
-        /* CONTACT */
+    text-decoration: none;
 
-        .contact {
+    margin-left: 25px;
 
-            min-height: 100vh;
+    font-size: 15px;
 
-            display: flex;
+    transition: 0.3s;
+}
 
-            justify-content: center;
+.nav-links a:hover {
+    color: #6c63ff;
+}
 
-            align-items: center;
 
-            text-align: center;
+/* MOBILE BUTTON */
 
-            padding: 120px 20px 60px;
+.menu-button {
 
-            background:
-                radial-gradient(
-                    circle at 50% 40%,
-                    rgba(108,99,255,0.18),
-                    transparent 40%
-                );
-        }
+    display: none;
 
+    background: none;
 
-        .contact-box {
+    border: none;
 
-            width: 100%;
+    color: white;
 
-            max-width: 700px;
+    font-size: 28px;
 
-            animation: fadeUp 0.9s ease forwards;
-        }
+    cursor: pointer;
+}
 
 
-        .small-text {
+/* CONTACT */
 
-            color: #6c63ff;
+.contact {
 
-            letter-spacing: 4px;
+    min-height: 100vh;
 
-            font-size: 13px;
+    display: flex;
 
-            margin-bottom: 15px;
-        }
+    justify-content: center;
 
+    align-items: center;
 
-        h1 {
+    text-align: center;
 
-            font-size: clamp(55px, 10vw, 90px);
+    padding: 130px 20px 70px;
+}
 
-            letter-spacing: 5px;
 
-            margin-bottom: 20px;
-        }
+.contact-content {
 
+    max-width: 750px;
 
-        .intro {
+    width: 100%;
 
-            color: #999;
+    animation: fadeUp 1s ease;
+}
 
-            font-size: 18px;
 
-            line-height: 1.7;
+.small-text {
 
-            margin-bottom: 40px;
-        }
+    color: #6c63ff;
 
+    letter-spacing: 4px;
 
-        /* CONTACT CARD */
+    font-size: 13px;
 
-        .contact-card {
+    margin-bottom: 15px;
+}
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #101017,
-                    #08080d
-                );
 
-            border: 1px solid #20202c;
+h1 {
 
-            border-radius: 25px;
+    font-size:
+        clamp(55px,10vw,90px);
 
-            padding: 40px;
+    letter-spacing: 5px;
 
-            box-shadow:
-                0 20px 60px
-                rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+}
 
-            transition: 0.3s;
-        }
 
+.intro {
 
-        .contact-card:hover {
+    color: #999;
 
-            border-color: #6c63ff;
+    font-size: 18px;
 
-            transform: translateY(-5px);
-        }
+    line-height: 1.7;
 
+    max-width: 650px;
 
-        .contact-card h2 {
+    margin: auto;
 
-            margin-bottom: 15px;
-        }
+    margin-bottom: 45px;
+}
 
 
-        .contact-card p {
+/* CONTACT CARD */
 
-            color: #999;
+.contact-card {
 
-            line-height: 1.7;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(108,99,255,0.18),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #12121b,
+            #08080d
+        );
 
-            margin-bottom: 30px;
-        }
+    border: 1px solid #29283a;
 
+    border-radius: 25px;
 
-        /* EMAIL BUTTON */
+    padding: 45px;
 
-        .email-button {
+    transition: 0.3s;
 
-            display: inline-block;
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.35);
+}
 
-            padding: 15px 30px;
 
-            border-radius: 30px;
+.contact-card:hover {
 
-            background: #6c63ff;
+    border-color: #6c63ff;
 
-            color: white;
+    transform: translateY(-5px);
 
-            text-decoration: none;
+    box-shadow:
+        0 25px 70px
+        rgba(108,99,255,0.12);
+}
 
-            font-weight: bold;
 
-            box-shadow:
-                0 0 25px
-                rgba(108,99,255,0.4);
+.contact-card h2 {
 
-            transition: 0.3s;
-        }
+    font-size: 28px;
 
+    margin-bottom: 15px;
+}
 
-        .email-button:hover {
 
-            transform: translateY(-5px);
+.contact-card p {
 
-            box-shadow:
-                0 0 40px
-                rgba(108,99,255,0.7);
-        }
+    color: #999;
 
+    line-height: 1.7;
 
-        /* SOCIAL LINKS */
+    margin-bottom: 30px;
+}
 
-        .social-title {
 
-            color: #6c63ff;
+/* EMAIL */
 
-            letter-spacing: 3px;
+.email-button {
 
-            font-size: 12px;
+    display: inline-block;
 
-            margin-top: 35px;
+    padding: 15px 30px;
 
-            margin-bottom: 15px;
-        }
+    border-radius: 30px;
 
+    background: #6c63ff;
 
-        .social-links a {
+    color: white;
 
-            display: inline-block;
+    text-decoration: none;
 
-            color: #aaa;
+    font-weight: bold;
 
-            text-decoration: none;
+    box-shadow:
+        0 0 25px
+        rgba(108,99,255,0.4);
 
-            margin: 0 5px;
+    transition: 0.3s;
+}
 
-            padding: 10px 18px;
 
-            border: 1px solid #20202c;
+.email-button:hover {
 
-            border-radius: 20px;
+    transform: translateY(-5px);
 
-            transition: 0.3s;
-        }
+    box-shadow:
+        0 0 40px
+        rgba(108,99,255,0.7);
+}
 
 
-        .social-links a:hover {
+/* SOCIAL */
 
-            color: #6c63ff;
+.social-title {
 
-            border-color: #6c63ff;
+    color: #6c63ff;
 
-            transform: translateY(-3px);
-        }
+    letter-spacing: 3px;
 
+    font-size: 12px;
 
-        /* BACK */
+    margin-top: 35px;
 
-        .back {
+    margin-bottom: 15px;
+}
 
-            display: inline-block;
 
-            margin-top: 30px;
+.social-links a {
 
-            color: #777;
+    display: inline-block;
 
-            text-decoration: none;
+    color: #aaa;
 
-            transition: 0.3s;
-        }
+    text-decoration: none;
 
+    margin: 5px;
 
-        .back:hover {
+    padding: 10px 18px;
 
-            color: #6c63ff;
-        }
+    border: 1px solid #20202c;
 
+    border-radius: 20px;
 
-        /* ANIMATION */
+    transition: 0.3s;
+}
 
-        @keyframes fadeUp {
 
-            from {
+.social-links a:hover {
 
-                opacity: 0;
+    color: #6c63ff;
 
-                transform: translateY(30px);
+    border-color: #6c63ff;
 
-            }
+    transform: translateY(-3px);
+}
 
-            to {
 
-                opacity: 1;
+/* BACK */
 
-                transform: translateY(0);
+.back {
 
-            }
+    display: inline-block;
 
-        }
+    margin-top: 30px;
 
+    color: #777;
 
-        /* MOBILE */
+    text-decoration: none;
 
-        @media (max-width: 700px) {
+    transition: 0.3s;
+}
 
-            nav {
 
-                padding: 18px 5%;
-            }
+.back:hover {
+    color: #6c63ff;
+}
 
 
-            .logo {
+/* ANIMATION */
 
-                font-size: 19px;
-            }
+@keyframes fadeUp {
 
+    from {
 
-            .menu-button {
+        opacity: 0;
 
-                display: block;
-            }
+        transform: translateY(30px);
 
+    }
 
-            .nav-links {
+    to {
 
-                position: absolute;
+        opacity: 1;
 
-                top: 70px;
+        transform: translateY(0);
 
-                right: 5%;
+    }
 
-                width: 180px;
+}
 
-                padding: 20px;
 
-                display: none;
+/* MOBILE */
 
-                flex-direction: column;
+@media (max-width:700px) {
 
-                background: #101017;
+    nav {
+        padding: 18px 5%;
+    }
 
-                border: 1px solid #20202c;
+    .logo {
+        font-size: 19px;
+    }
 
-                border-radius: 15px;
+    .menu-button {
+        display: block;
+    }
 
-                box-shadow:
-                    0 15px 40px
-                    rgba(0,0,0,0.5);
-            }
+    .nav-links {
 
+        position: absolute;
 
-            .nav-links.active {
+        top: 70px;
 
-                display: flex;
-            }
+        right: 5%;
 
+        width: 180px;
 
-            .nav-links a {
+        padding: 20px;
 
-                margin: 10px 0;
+        display: none;
 
-                font-size: 15px;
+        flex-direction: column;
 
-                text-align: center;
-            }
+        background: #101017;
 
+        border: 1px solid #20202c;
 
-            .contact {
+        border-radius: 15px;
 
-                padding: 120px 7% 60px;
-            }
+    }
 
+    .nav-links.active {
+        display: flex;
+    }
 
-            .contact-card {
+    .nav-links a {
 
-                padding: 30px 20px;
-            }
+        margin: 10px 0;
 
-        }
+        text-align: center;
 
-    </style>
+    }
+
+    .contact {
+        padding: 120px 7% 60px;
+    }
+
+    .contact-card {
+        padding: 30px 20px;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -440,204 +461,181 @@
 <body>
 
 
-    <!-- NAVIGATION -->
+<!-- NAV -->
 
-    <nav>
+<nav>
 
-        <div class="logo">
+    <div class="logo">
 
-            CHANIEL<span>.</span>
-
-        </div>
-
-
-        <button
-            class="menu-button"
-            onclick="toggleMenu()"
-            aria-label="Open navigation menu"
-        >
-
-            ☰
-
-        </button>
-
-
-        <div
-            class="nav-links"
-            id="navLinks"
-        >
-
-            <a
-                href="index.html"
-                onclick="closeMenu()"
-            >
-                Home
-            </a>
-
-
-            <a
-                href="index.html#about"
-                onclick="closeMenu()"
-            >
-                About
-            </a>
-
-
-            <a
-                href="project.html"
-                onclick="closeMenu()"
-            >
-                Projects
-            </a>
-
-
-            <a
-                href="contact.html"
-                onclick="closeMenu()"
-            >
-                Contact
-            </a>
-
-        </div>
-
-    </nav>
-
-
-    <!-- CONTACT -->
-
-    <div class="contact">
-
-        <div class="contact-box">
-
-
-            <div class="small-text">
-
-                LET'S CONNECT
-
-            </div>
-
-
-            <h1>
-
-                Contact Me
-
-            </h1>
-
-
-            <p class="intro">
-
-                Want to get in touch?
-                You can reach me using the button below.
-
-            </p>
-
-
-            <div class="contact-card">
-
-
-                <h2>
-
-                    📩 Send Me an Email
-
-                </h2>
-
-
-                <p>
-
-                    Whether you want to talk about a project,
-                    coding or just say hello, I'd love to hear
-                    from you.
-
-                </p>
-
-
-                <a
-                    href="mailto:chanielsithole@gmail.com"
-                    class="email-button"
-                >
-
-                    Email Me →
-
-                </a>
-
-
-                <div class="social-title">
-
-                    FIND ME ONLINE
-
-                </div>
-
-
-                <div class="social-links">
-
-
-                    <a
-                        href="https://www.instagram.com/chan.iel_/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        Instagram
-
-                    </a>
-
-
-                    <a
-                        href="https://github.com/chanieldev"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        GitHub
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-
-            <a
-                href="index.html"
-                class="back"
-            >
-
-                ← Back to Home
-
-            </a>
-
-
-        </div>
+        CHANIEL<span>.</span>
 
     </div>
 
 
-    <!-- MOBILE MENU SCRIPT -->
+    <button
+        class="menu-button"
+        onclick="toggleMenu()"
+    >
 
-    <script>
+        ☰
 
-        function toggleMenu() {
-
-            const menu =
-                document.getElementById("navLinks");
-
-            menu.classList.toggle("active");
-
-        }
+    </button>
 
 
-        function closeMenu() {
+    <div
+        class="nav-links"
+        id="navLinks"
+    >
 
-            const menu =
-                document.getElementById("navLinks");
+        <a href="index.html">
+            Home
+        </a>
 
-            menu.classList.remove("active");
+        <a href="index.html#about">
+            About
+        </a>
 
-        }
+        <a href="index.html#skills">
+            Skills
+        </a>
 
-    </script>
+        <a href="project.html">
+            Projects
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+    <div class="contact-content">
+
+
+        <div class="small-text">
+
+            LET'S CONNECT
+
+        </div>
+
+
+        <h1>
+
+            Contact Me
+
+        </h1>
+
+
+        <p class="intro">
+
+            Have a question, idea or project?
+            You can reach me by email or find me
+            on social media.
+
+        </p>
+
+
+        <div class="contact-card">
+
+
+            <h2>
+
+                📩 Let's Talk
+
+            </h2>
+
+
+            <p>
+
+                I'm always learning and building.
+                If you'd like to get in touch,
+                send me an email.
+
+            </p>
+
+
+            <a
+                href="mailto:chanielsithole@gmail.com"
+                class="email-button"
+            >
+
+                Email Me →
+
+            </a>
+
+
+            <div class="social-title">
+
+                FIND ME ONLINE
+
+            </div>
+
+
+            <div class="social-links">
+
+
+                <a
+                    href="https://www.instagram.com/chan.iel_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    Instagram
+
+                </a>
+
+
+                <a
+                    href="https://github.com/chanieldev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    GitHub
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="back"
+        >
+
+            ← Back to Home
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<script>
+
+function toggleMenu() {
+
+    const menu =
+        document.getElementById("navLinks");
+
+    menu.classList.toggle("active");
+
+}
+
+</script>
 
 
 </body>
