@@ -3,986 +3,199 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Chaniel | Creative Developer</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="manifest" href="manifest.json">
-
-<meta name="theme-color" content="#6c63ff">
-
-<title>CHANIEL | Creative Personal Brand</title>
-
-<style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #050509;
-    color: white;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-}
-
-
-/* GLOWING BACKGROUND */
-
-body::before {
-    content: "";
-    position: fixed;
-
-    width: 500px;
-    height: 500px;
-
-    background: #6c63ff;
-
-    filter: blur(180px);
-
-    opacity: 0.08;
-
-    top: 10%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    pointer-events: none;
-
-    z-index: -1;
-}
-
-
-/* NAVIGATION */
-
-nav {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    padding: 20px 8%;
-
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    background: rgba(5,5,9,0.85);
-
-    backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 25px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-}
-
-.logo span {
-    color: #6c63ff;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a {
-    color: #ccc;
-
-    text-decoration: none;
-
-    margin-left: 25px;
-
-    font-size: 15px;
-
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #6c63ff;
-}
-
-.menu-button {
-    display: none;
-
-    background: none;
-
-    border: none;
-
-    color: white;
-
-    font-size: 28px;
-
-    cursor: pointer;
-}
-
-
-/* HERO */
-
-.hero {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 120px 20px 60px;
-
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(108,99,255,0.18),
-            transparent 35%
-        );
-}
-
-.hero-content {
-    max-width: 800px;
-
-    animation: fadeUp 1s ease forwards;
-}
-
-.profile-pic {
-
-    width: 190px;
-    height: 190px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border: 3px solid #6c63ff;
-
-    padding: 5px;
-
-    box-shadow:
-        0 0 40px rgba(108,99,255,0.5);
-
-    margin-bottom: 30px;
-}
-
-.small-text {
-
-    color: #6c63ff;
-
-    letter-spacing: 4px;
-
-    font-size: 13px;
-
-    margin-bottom: 15px;
-}
-
-h1 {
-
-    font-size:
-        clamp(60px, 12vw, 120px);
-
-    letter-spacing: 8px;
-
-    line-height: 1;
-
-    margin-bottom: 20px;
-}
-
-.hero h2 {
-
-    font-size: 25px;
-
-    color: #ddd;
-
-    margin-bottom: 20px;
-}
-
-.hero p {
-
-    color: #999;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-
-    max-width: 600px;
-
-    margin: auto;
-}
-
-
-/* BUTTON */
-
-.button {
-
-    display: inline-block;
-
-    margin-top: 35px;
-
-    padding: 15px 30px;
-
-    border-radius: 30px;
-
-    background: #6c63ff;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    box-shadow:
-        0 0 25px rgba(108,99,255,0.4);
-
-    transition: 0.3s;
-}
-
-.button:hover {
-
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 0 40px rgba(108,99,255,0.7);
-}
-
-
-/* SECTIONS */
-
-section {
-
-    padding: 100px 8%;
-
-    max-width: 1200px;
-
-    margin: auto;
-}
-
-.section-title {
-
-    font-size: 40px;
-
-    margin-bottom: 15px;
-}
-
-.section-line {
-
-    width: 60px;
-
-    height: 4px;
-
-    background: #6c63ff;
-
-    margin-bottom: 40px;
-}
-
-.about-text {
-
-    color: #aaa;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    max-width: 800px;
-}
-
-
-/* SKILLS */
-
-.skills {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(250px, 1fr)
-        );
-
-    gap: 25px;
-
-    margin-top: 30px;
-}
-
-.skill {
-
-    background:
-        linear-gradient(
-            145deg,
-            #101017,
-            #08080d
-        );
-
-    border: 1px solid #20202c;
-
-    border-radius: 20px;
-
-    padding: 30px;
-
-    transition: 0.3s;
-}
-
-.skill:hover {
-
-    transform: translateY(-8px);
-
-    border-color: #6c63ff;
-
-    box-shadow:
-        0 15px 40px
-        rgba(108,99,255,0.15);
-}
-
-.skill h3 {
-
-    font-size: 22px;
-
-    margin-bottom: 15px;
-}
-
-.skill p {
-
-    color: #999;
-
-    line-height: 1.7;
-}
-
-.skill-bar {
-
-    height: 6px;
-
-    background: #20202c;
-
-    border-radius: 10px;
-
-    margin-top: 20px;
-
-    overflow: hidden;
-}
-
-.skill-progress {
-
-    height: 100%;
-
-    width: 70%;
-
-    background: #6c63ff;
-
-    border-radius: 10px;
-
-    animation: grow 1.5s ease;
-}
-
-
-/* PROJECTS */
-
-.cards {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(250px, 1fr)
-        );
-
-    gap: 25px;
-}
-
-.card {
-
-    background:
-        linear-gradient(
-            145deg,
-            #101017,
-            #08080d
-        );
-
-    border: 1px solid #20202c;
-
-    border-radius: 20px;
-
-    padding: 30px;
-
-    transition: 0.3s;
-
-    text-decoration: none;
-
-    color: white;
-
-    display: block;
-}
-
-.card:hover {
-
-    transform: translateY(-8px);
-
-    border-color: #6c63ff;
-
-    box-shadow:
-        0 15px 40px
-        rgba(108,99,255,0.15);
-}
-
-.card h3 {
-
-    font-size: 22px;
-
-    margin-bottom: 15px;
-}
-
-.card p {
-
-    color: #999;
-
-    line-height: 1.7;
-}
-
-.tag {
-
-    display: inline-block;
-
-    margin-top: 20px;
-
-    margin-right: 5px;
-
-    padding: 6px 12px;
-
-    border-radius: 20px;
-
-    background: #161525;
-
-    color: #8c86ff;
-
-    font-size: 12px;
-}
-
-
-/* FOOTER */
-
-footer {
-
-    text-align: center;
-
-    padding: 50px 20px;
-
-    border-top: 1px solid #181820;
-
-    color: #666;
-}
-
-footer span {
-    color: #6c63ff;
-}
-
-.social-title {
-
-    color: #6c63ff;
-
-    letter-spacing: 3px;
-
-    font-size: 12px;
-
-    margin-bottom: 15px;
-}
-
-.social-links {
-    margin-bottom: 25px;
-}
-
-.social-links a {
-
-    display: inline-block;
-
-    color: #aaa;
-
-    text-decoration: none;
-
-    margin: 0 10px;
-
-    padding: 10px 18px;
-
-    border: 1px solid #20202c;
-
-    border-radius: 20px;
-
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-
-    color: #6c63ff;
-
-    border-color: #6c63ff;
-
-    transform: translateY(-3px);
-}
-
-
-/* ANIMATIONS */
-
-@keyframes fadeUp {
-
-    from {
-
-        opacity: 0;
-
-        transform: translateY(30px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-    }
-}
-
-@keyframes grow {
-
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 70%;
-    }
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    nav {
-        padding: 18px 5%;
-    }
-
-    .logo {
-        font-size: 19px;
-    }
-
-    .menu-button {
-        display: block;
-    }
-
-    .nav-links {
-
-        position: absolute;
-
-        top: 70px;
-
-        right: 5%;
-
-        width: 180px;
-
-        padding: 20px;
-
-        display: none;
-
-        flex-direction: column;
-
-        background: #101017;
-
-        border: 1px solid #20202c;
-
-        border-radius: 15px;
-
-        box-shadow:
-            0 15px 40px
-            rgba(0,0,0,0.5);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-
-        margin: 10px 0;
-
-        font-size: 15px;
-
-        text-align: center;
-    }
-
-    h1 {
-        letter-spacing: 4px;
-    }
-
-    section {
-        padding: 70px 7%;
-    }
-
-}
-
-</style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">CHANIEL.</div>
 
-<!-- NAVIGATION -->
-
-<nav>
-
-    <div class="logo">
-        CHANIEL<span>.</span>
-    </div>
-
-
-    <button
-        class="menu-button"
-        onclick="toggleMenu()"
-        aria-label="Open navigation menu"
-    >
-        ☰
-    </button>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
 
-    <div
-        class="nav-links"
-        id="navLinks"
-    >
+    <!-- HOME -->
+    <section class="hero" id="home">
 
-        <a href="#home">
-            Home
-        </a>
+        <div class="hero-content">
 
-        <a href="#about">
-            About
-        </a>
+            <p class="intro">WELCOME TO MY WEBSITE</p>
 
-        <a href="#skills">
-            Skills
-        </a>
+            <h1>CHANIEL</h1>
 
-        <a href="#projects">
-            Projects
-        </a>
+            <h2>Creative Developer</h2>
 
-        <a href="contact.html">
-            Contact
-        </a>
+            <p>
+                I create websites, experiment with code,
+                and turn ideas into digital experiences.
+            </p>
 
-    </div>
-
-</nav>
-
-
-<!-- HERO -->
-
-<div
-    class="hero"
-    id="home"
->
-
-    <div class="hero-content">
-
-
-        <img
-            src="me.jpg"
-            alt="Chaniel"
-            class="profile-pic"
-        >
-
-
-        <div class="small-text">
-
-            WELCOME TO MY WORLD
+            <a href="project.html" class="btn">
+                View My Work
+            </a>
 
         </div>
 
-
-        <h1>
-
-            CHANIEL
-
-        </h1>
+    </section>
 
 
-        <h2>
+    <!-- ABOUT -->
+    <section id="about">
 
-            CREATIVE • CODER • DREAMER
-
-        </h2>
-
+        <h2>About Me</h2>
 
         <p>
-
-            I'm learning to build things on the internet,
-            explore creativity and turn ideas into reality.
-
+            Hey, I'm Chaniel. I'm learning web development
+            and building my skills in HTML and CSS.
+            This website is where I showcase what I'm creating
+            and what I'm learning along the way.
         </p>
 
-
-        <a
-            href="#projects"
-            class="button"
-        >
-
-            Explore My Work →
-
-        </a>
+    </section>
 
 
-    </div>
+    <!-- SKILLS -->
+    <section id="skills">
 
-</div>
+        <h2>My Skills</h2>
 
+        <div class="projects">
 
-<!-- ABOUT -->
+            <div class="project-card">
+                <h3>HTML</h3>
 
-<section id="about">
-
-    <h2 class="section-title">
-
-        About Me
-
-    </h2>
-
-    <div class="section-line"></div>
-
-
-    <p class="about-text">
-
-        I'm Chaniel. I'm currently learning coding
-        and web design while building my own projects
-        from scratch.
-
-        This website is part of my journey as I learn,
-        experiment and create.
-
-    </p>
-
-</section>
+                <p>
+                    Building the structure and content
+                    of websites.
+                </p>
+            </div>
 
 
-<!-- SKILLS -->
+            <div class="project-card">
+                <h3>CSS</h3>
 
-<section id="skills">
-
-    <h2 class="section-title">
-
-        My Skills
-
-    </h2>
-
-    <div class="section-line"></div>
+                <p>
+                    Designing websites with layouts,
+                    effects and animations.
+                </p>
+            </div>
 
 
-    <div class="skills">
+            <div class="project-card">
+                <h3>Web Design</h3>
+
+                <p>
+                    Creating creative and modern
+                    digital experiences.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
 
 
-        <div class="skill">
+    <!-- PROJECTS PREVIEW -->
+    <section id="projects">
 
-            <h3>
-                🌐 HTML & CSS
-            </h3>
+        <h2>My Projects</h2>
 
-            <p>
+        <div class="projects">
 
-                Building and styling websites while
-                learning the fundamentals of web design.
+            <div class="project-card">
 
-            </p>
+                <h3>Personal Website</h3>
+
+                <p>
+                    My personal website built using
+                    HTML and CSS.
+                </p>
+
+            </div>
 
 
-            <div class="skill-bar">
+            <div class="project-card">
 
-                <div class="skill-progress"></div>
+                <h3>Creative Web Design</h3>
+
+                <p>
+                    Experiments with modern layouts,
+                    animations and futuristic designs.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>More Coming Soon</h3>
+
+                <p>
+                    More projects are coming as I continue
+                    learning and improving my coding skills.
+                </p>
 
             </div>
 
         </div>
 
+        <br><br>
 
-    </div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-    <h2 class="section-title">
-
-        My Projects
-
-    </h2>
-
-    <div class="section-line"></div>
-
-
-    <div class="cards">
-
-
-        <a
-            href="project.html"
-            class="card"
-        >
-
-            <h3>
-                🌐 My First Website
-            </h3>
-
-            <p>
-
-                My first website created while learning
-                HTML and CSS.
-
-            </p>
-
-            <span class="tag">
-                HTML
-            </span>
-
-            <span class="tag">
-                CSS
-            </span>
-
+        <a href="project.html" class="btn">
+            See All Projects →
         </a>
 
-
-        <div class="card">
-
-            <h3>
-                💻 Coding Journey
-            </h3>
-
-            <p>
-
-                A collection of things I'm learning as I
-                improve my web development skills.
-
-            </p>
-
-            <span class="tag">
-                CODING
-            </span>
-
-            <span class="tag">
-                WEB DESIGN
-            </span>
-
-        </div>
+    </section>
 
 
-        <div class="card">
+    <!-- CONTACT -->
+    <section id="contact">
 
-            <h3>
-                🚀 Future Projects
-            </h3>
+        <h2>Let's Connect</h2>
 
-            <p>
+        <p>
+            Want to see more of my work?
+            Follow my journey on Instagram.
+        </p>
 
-                More creative projects coming soon as
-                I continue developing my skills.
-
-            </p>
-
-            <span class="tag">
-                COMING SOON
-            </span>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-
-    <div class="social-title">
-
-        FIND ME ONLINE
-
-    </div>
-
-
-    <div class="social-links">
-
+        <br>
 
         <a
-            href="https://www.instagram.com/chan.iel_/"
+            href="https://instagram.com/chan.iel_"
             target="_blank"
             rel="noopener noreferrer"
+            class="btn"
         >
-
             Instagram
-
         </a>
 
-
-        <a
-            href="https://github.com/chanieldev"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            GitHub
-
-        </a>
+    </section>
 
 
-    </div>
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Chaniel. Built with HTML & CSS.
+        </p>
+
+    </footer>
 
 
-    <p>
-
-        © 2026
-        <span>CHANIEL</span>
-        — Built from scratch.
-
-    </p>
-
-
-</footer>
-
-
-<!-- MOBILE MENU -->
-
-<script>
-
-function toggleMenu() {
-
-    const menu =
-        document.getElementById("navLinks");
-
-    menu.classList.toggle("active");
-
-}
-
-</script>
-
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
 </body>
 
