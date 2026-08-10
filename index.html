@@ -5,7 +5,12 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#6c63ff">
 
 <title>CHANIEL | Creative Personal Brand</title>
 
@@ -34,6 +39,7 @@ body {
 body::before {
     content: "";
     position: fixed;
+
     width: 500px;
     height: 500px;
 
@@ -601,6 +607,10 @@ footer span {
         border: 1px solid #20202c;
 
         border-radius: 15px;
+
+        box-shadow:
+            0 15px 40px
+            rgba(0,0,0,0.5);
     }
 
     .nav-links.active {
@@ -646,6 +656,7 @@ footer span {
     <button
         class="menu-button"
         onclick="toggleMenu()"
+        aria-label="Open navigation menu"
     >
         ☰
     </button>
@@ -957,7 +968,7 @@ footer span {
 </footer>
 
 
-<!-- MENU SCRIPT -->
+<!-- MOBILE MENU -->
 
 <script>
 
