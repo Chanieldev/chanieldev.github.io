@@ -4,417 +4,418 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Projects | CHANIEL</title>
+<title>Projects | CHANIEL</title>
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            background: #050509;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
+body {
+    background: #050509;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
 
 
-        /* NAVIGATION */
+/* NAV */
 
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-            padding: 20px 8%;
+    padding: 20px 8%;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-            background: rgba(5,5,9,0.85);
+    background: rgba(5,5,9,0.85);
 
-            backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 
-            z-index: 1000;
-        }
+    z-index: 1000;
+}
 
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
+.logo span {
+    color: #6c63ff;
+}
 
+.nav-links {
+    display: flex;
+    align-items: center;
+}
 
-        .logo span {
-            color: #6c63ff;
-        }
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+    transition: 0.3s;
+}
 
+.nav-links a:hover {
+    color: #6c63ff;
+}
 
-        /* DESKTOP NAV */
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+}
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
 
+/* MAIN */
 
-        .nav-links a {
-            color: #ccc;
+main {
 
-            text-decoration: none;
+    max-width: 1100px;
 
-            margin-left: 25px;
+    margin: auto;
 
-            font-size: 15px;
+    padding: 150px 8% 100px;
+}
 
-            transition: 0.3s;
-        }
 
+.small-text {
 
-        .nav-links a:hover {
-            color: #6c63ff;
-        }
+    color: #6c63ff;
 
+    letter-spacing: 4px;
 
-        /* MOBILE MENU */
+    font-size: 13px;
 
-        .menu-button {
-            display: none;
+    margin-bottom: 15px;
+}
 
-            background: none;
 
-            border: none;
+h1 {
 
-            color: white;
+    font-size: clamp(55px,10vw,90px);
 
-            font-size: 28px;
+    letter-spacing: 5px;
 
-            cursor: pointer;
-        }
+    margin-bottom: 20px;
+}
 
 
-        /* PROJECT PAGE */
+.intro {
 
-        .projects {
+    color: #999;
 
-            max-width: 1100px;
+    font-size: 18px;
 
-            margin: auto;
+    line-height: 1.7;
 
-            padding: 150px 8% 100px;
+    max-width: 700px;
 
-            animation: fadeUp 0.9s ease forwards;
-        }
+    margin-bottom: 60px;
+}
 
 
-        .small-text {
+/* FEATURED PROJECT */
 
-            color: #6c63ff;
+.featured {
 
-            letter-spacing: 4px;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(108,99,255,0.2),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #12121b,
+            #08080d
+        );
 
-            font-size: 13px;
+    border: 1px solid #29283a;
 
-            margin-bottom: 15px;
-        }
+    border-radius: 25px;
 
+    padding: 45px;
 
-        h1 {
+    margin-bottom: 30px;
 
-            font-size: clamp(55px, 10vw, 90px);
+    transition: 0.3s;
+}
 
-            letter-spacing: 5px;
+.featured:hover {
 
-            margin-bottom: 20px;
-        }
+    border-color: #6c63ff;
 
+    box-shadow:
+        0 20px 60px
+        rgba(108,99,255,0.15);
+}
 
-        .intro {
 
-            color: #999;
+.featured-label {
 
-            font-size: 18px;
+    color: #6c63ff;
 
-            line-height: 1.7;
+    font-size: 12px;
 
-            max-width: 700px;
+    letter-spacing: 3px;
 
-            margin-bottom: 60px;
-        }
+    margin-bottom: 15px;
+}
 
 
-        /* PROJECT GRID */
+.featured h2 {
 
-        .project-grid {
+    font-size: 35px;
 
-            display: grid;
+    margin-bottom: 15px;
+}
 
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(280px, 1fr)
-                );
 
-            gap: 25px;
-        }
+.featured p {
 
+    color: #999;
 
-        /* PROJECT CARDS */
+    line-height: 1.7;
 
-        .project {
+    max-width: 700px;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #101017,
-                    #08080d
-                );
+    margin-bottom: 25px;
+}
 
-            border: 1px solid #20202c;
 
-            border-radius: 22px;
+/* TAGS */
 
-            padding: 30px;
+.tag {
 
-            min-height: 300px;
+    display: inline-block;
 
-            display: flex;
+    padding: 7px 13px;
 
-            flex-direction: column;
+    margin-right: 5px;
 
-            justify-content: space-between;
+    border-radius: 20px;
 
-            transition: 0.3s;
+    background: #161525;
 
-            animation: fadeUp 0.8s ease forwards;
-        }
+    color: #8c86ff;
 
+    font-size: 12px;
+}
 
-        .project:hover {
 
-            transform: translateY(-8px);
+/* BUTTON */
 
-            border-color: #6c63ff;
+.view-button {
 
-            box-shadow:
-                0 20px 50px
-                rgba(108,99,255,0.15);
-        }
+    display: inline-block;
 
+    margin-top: 30px;
 
-        .project-number {
+    padding: 13px 25px;
 
-            color: #6c63ff;
+    background: #6c63ff;
 
-            font-size: 13px;
+    color: white;
 
-            letter-spacing: 3px;
+    text-decoration: none;
 
-            margin-bottom: 20px;
-        }
+    border-radius: 25px;
 
+    font-weight: bold;
 
-        .project h2 {
+    transition: 0.3s;
+}
 
-            font-size: 25px;
 
-            margin-bottom: 15px;
-        }
+.view-button:hover {
 
+    transform: translateY(-4px);
 
-        .project p {
+    box-shadow:
+        0 10px 30px
+        rgba(108,99,255,0.4);
+}
 
-            color: #999;
 
-            line-height: 1.7;
+/* OTHER PROJECTS */
 
-            margin-bottom: 25px;
-        }
+.grid {
 
+    display: grid;
 
-        /* TAGS */
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px,1fr)
+        );
 
-        .tags {
+    gap: 25px;
+}
 
-            margin-bottom: 25px;
-        }
 
+.card {
 
-        .tag {
+    background:
+        linear-gradient(
+            145deg,
+            #101017,
+            #08080d
+        );
 
-            display: inline-block;
+    border: 1px solid #20202c;
 
-            padding: 6px 12px;
+    border-radius: 20px;
 
-            margin-right: 5px;
+    padding: 30px;
 
-            margin-bottom: 5px;
+    min-height: 250px;
 
-            border-radius: 20px;
+    transition: 0.3s;
+}
 
-            background: #161525;
 
-            color: #8c86ff;
+.card:hover {
 
-            font-size: 12px;
-        }
+    transform: translateY(-8px);
 
+    border-color: #6c63ff;
 
-        /* PROJECT BUTTON */
+    box-shadow:
+        0 15px 40px
+        rgba(108,99,255,0.15);
+}
 
-        .project-button {
 
-            color: white;
+.card-number {
 
-            text-decoration: none;
+    color: #6c63ff;
 
-            font-weight: bold;
+    font-size: 12px;
 
-            transition: 0.3s;
-        }
+    letter-spacing: 3px;
 
+    margin-bottom: 20px;
+}
 
-        .project-button:hover {
 
-            color: #6c63ff;
-        }
+.card h3 {
 
+    font-size: 23px;
 
-        /* BACK BUTTON */
+    margin-bottom: 15px;
+}
 
-        .back {
 
-            display: inline-block;
+.card p {
 
-            margin-top: 50px;
+    color: #999;
 
-            color: #777;
+    line-height: 1.7;
+}
 
-            text-decoration: none;
 
-            transition: 0.3s;
-        }
+.back {
 
+    display: inline-block;
 
-        .back:hover {
+    margin-top: 50px;
 
-            color: #6c63ff;
-        }
+    color: #777;
 
+    text-decoration: none;
+}
 
-        /* ANIMATION */
 
-        @keyframes fadeUp {
+.back:hover {
 
-            from {
+    color: #6c63ff;
+}
 
-                opacity: 0;
 
-                transform: translateY(30px);
+/* MOBILE */
 
-            }
+@media (max-width:700px) {
 
-            to {
+    nav {
+        padding: 18px 5%;
+    }
 
-                opacity: 1;
+    .logo {
+        font-size: 19px;
+    }
 
-                transform: translateY(0);
+    .menu-button {
+        display: block;
+        cursor: pointer;
+    }
 
-            }
+    .nav-links {
 
-        }
+        position: absolute;
 
+        top: 70px;
 
-        /* MOBILE */
+        right: 5%;
 
-        @media (max-width: 700px) {
+        width: 180px;
 
+        padding: 20px;
 
-            nav {
+        display: none;
 
-                padding: 18px 5%;
-            }
+        flex-direction: column;
 
+        background: #101017;
 
-            .logo {
+        border: 1px solid #20202c;
 
-                font-size: 19px;
-            }
+        border-radius: 15px;
+    }
 
+    .nav-links.active {
+        display: flex;
+    }
 
-            .menu-button {
+    .nav-links a {
 
-                display: block;
-            }
+        margin: 10px 0;
 
+        text-align: center;
+    }
 
-            .nav-links {
+    main {
+        padding: 130px 7% 70px;
+    }
 
-                position: absolute;
+    .featured {
+        padding: 30px;
+    }
 
-                top: 70px;
+}
 
-                right: 5%;
-
-                width: 180px;
-
-                padding: 20px;
-
-                display: none;
-
-                flex-direction: column;
-
-                background: #101017;
-
-                border: 1px solid #20202c;
-
-                border-radius: 15px;
-
-                box-shadow:
-                    0 15px 40px
-                    rgba(0,0,0,0.5);
-            }
-
-
-            .nav-links.active {
-
-                display: flex;
-            }
-
-
-            .nav-links a {
-
-                margin: 10px 0;
-
-                font-size: 15px;
-
-                text-align: center;
-            }
-
-
-            .projects {
-
-                padding: 130px 7% 70px;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -422,315 +423,222 @@
 <body>
 
 
-    <!-- NAVIGATION -->
+<nav>
 
-    <nav>
-
-
-        <div class="logo">
-
-            CHANIEL<span>.</span>
-
-        </div>
+    <div class="logo">
+        CHANIEL<span>.</span>
+    </div>
 
 
-        <button
-            class="menu-button"
-            onclick="toggleMenu()"
-            aria-label="Open navigation menu"
-        >
-
-            ☰
-
-        </button>
+    <button
+        class="menu-button"
+        onclick="toggleMenu()"
+    >
+        ☰
+    </button>
 
 
-        <div
-            class="nav-links"
-            id="navLinks"
-        >
+    <div
+        class="nav-links"
+        id="navLinks"
+    >
 
+        <a href="index.html">
+            Home
+        </a>
 
-            <a
-                href="index.html"
-                onclick="closeMenu()"
-            >
-                Home
-            </a>
+        <a href="index.html#about">
+            About
+        </a>
 
+        <a href="index.html#skills">
+            Skills
+        </a>
 
-            <a
-                href="index.html#about"
-                onclick="closeMenu()"
-            >
-                About
-            </a>
-
-
-            <a
-                href="project.html"
-                onclick="closeMenu()"
-            >
-                Projects
-            </a>
-
-
-            <a
-                href="contact.html"
-                onclick="closeMenu()"
-            >
-                Contact
-            </a>
-
-
-        </div>
-
-
-    </nav>
-
-
-    <!-- PROJECTS -->
-
-    <section class="projects">
-
-
-        <div class="small-text">
-
-            MY WORK
-
-        </div>
-
-
-        <h1>
-
+        <a href="project.html">
             Projects
+        </a>
 
-        </h1>
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
 
 
-        <p class="intro">
+<main>
 
-            Here's a look at what I'm building,
-            learning and experimenting with as I
-            continue my journey into coding and web design.
+
+    <div class="small-text">
+        MY WORK
+    </div>
+
+
+    <h1>
+        Projects
+    </h1>
+
+
+    <p class="intro">
+
+        I'm learning, building and experimenting with
+        web development. Here are some of the projects
+        I've started creating.
+
+    </p>
+
+
+    <!-- FEATURED -->
+
+    <div class="featured">
+
+
+        <div class="featured-label">
+            FEATURED PROJECT
+        </div>
+
+
+        <h2>
+            🌐 CHANIEL Personal Website
+        </h2>
+
+
+        <p>
+
+            My personal portfolio website built from scratch
+            while learning HTML and CSS. It represents my
+            first steps into web development.
 
         </p>
 
 
-        <div class="project-grid">
+        <span class="tag">
+            HTML
+        </span>
 
 
-            <!-- PROJECT 01 -->
+        <span class="tag">
+            CSS
+        </span>
 
-            <div class="project">
 
+        <span class="tag">
+            WEB DESIGN
+        </span>
 
-                <div>
 
-                    <div class="project-number">
-
-                        PROJECT 01
-
-                    </div>
-
-
-                    <h2>
-
-                        🌐 My Personal Website
-
-                    </h2>
-
-
-                    <p>
-
-                        A personal website built from scratch
-                        while learning HTML and CSS.
-
-                    </p>
-
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            HTML
-                        </span>
-
-                        <span class="tag">
-                            CSS
-                        </span>
-
-                        <span class="tag">
-                            WEB DESIGN
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <a
-                    href="index.html"
-                    class="project-button"
-                >
-
-                    View Website →
-
-                </a>
-
-
-            </div>
-
-
-            <!-- PROJECT 02 -->
-
-            <div class="project">
-
-
-                <div>
-
-                    <div class="project-number">
-
-                        PROJECT 02
-
-                    </div>
-
-
-                    <h2>
-
-                        💻 Coding Journey
-
-                    </h2>
-
-
-                    <p>
-
-                        A collection of experiments and
-                        things I'm learning as I improve
-                        my coding skills.
-
-                    </p>
-
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            CODING
-                        </span>
-
-                        <span class="tag">
-                            HTML
-                        </span>
-
-                        <span class="tag">
-                            CSS
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <span class="project-button">
-
-                    IN PROGRESS →
-
-                </span>
-
-
-            </div>
-
-
-            <!-- PROJECT 03 -->
-
-            <div class="project">
-
-
-                <div>
-
-                    <div class="project-number">
-
-                        PROJECT 03
-
-                    </div>
-
-
-                    <h2>
-
-                        🚀 Future Project
-
-                    </h2>
-
-
-                    <p>
-
-                        More creative websites and coding
-                        projects will be added here as I
-                        continue learning.
-
-                    </p>
-
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            COMING SOON
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <span class="project-button">
-
-                    COMING SOON →
-
-                </span>
-
-
-            </div>
-
-
-        </div>
+        <br>
 
 
         <a
             href="index.html"
-            class="back"
+            class="view-button"
         >
 
-            ← Back to Home
+            View Project →
 
         </a>
 
 
-    </section>
+    </div>
 
 
-    <!-- MOBILE MENU SCRIPT -->
+    <!-- OTHER PROJECTS -->
 
-    <script>
-
-        function toggleMenu() {
-
-            const menu =
-                document.getElementById("navLinks");
-
-            menu.classList.toggle("active");
-
-        }
+    <div class="grid">
 
 
-        function closeMenu() {
+        <div class="card">
 
-            const menu =
-                document.getElementById("navLinks");
+            <div class="card-number">
+                PROJECT 02
+            </div>
 
-            menu.classList.remove("active");
+            <h3>
+                💻 Coding Journey
+            </h3>
 
-        }
+            <p>
 
-    </script>
+                A collection of experiments and things
+                I'm learning while improving my coding
+                skills.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-number">
+                PROJECT 03
+            </div>
+
+            <h3>
+                🎨 Creative Experiments
+            </h3>
+
+            <p>
+
+                Exploring different designs, layouts
+                and ideas to improve my websites.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-number">
+                PROJECT 04
+            </div>
+
+            <h3>
+                🚀 Future Projects
+            </h3>
+
+            <p>
+
+                More websites and creative coding
+                projects coming soon.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <a
+        href="index.html"
+        class="back"
+    >
+
+        ← Back to Home
+
+    </a>
+
+
+</main>
+
+
+<script>
+
+function toggleMenu() {
+
+    const menu =
+        document.getElementById("navLinks");
+
+    menu.classList.toggle("active");
+
+}
+
+</script>
 
 
 </body>

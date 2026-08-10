@@ -29,21 +29,50 @@ body {
 }
 
 
+/* GLOWING BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+
+    background: #6c63ff;
+
+    filter: blur(180px);
+
+    opacity: 0.08;
+
+    top: 10%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
 /* NAVIGATION */
 
 nav {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
 
     padding: 20px 8%;
 
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
-    background: rgba(5, 5, 9, 0.85);
+    background: rgba(5,5,9,0.85);
+
     backdrop-filter: blur(15px);
 
     border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -53,16 +82,15 @@ nav {
 
 .logo {
     font-size: 25px;
+
     font-weight: bold;
+
     letter-spacing: 3px;
 }
 
 .logo span {
     color: #6c63ff;
 }
-
-
-/* DESKTOP MENU */
 
 .nav-links {
     display: flex;
@@ -71,6 +99,7 @@ nav {
 
 .nav-links a {
     color: #ccc;
+
     text-decoration: none;
 
     margin-left: 25px;
@@ -84,13 +113,11 @@ nav {
     color: #6c63ff;
 }
 
-
-/* MOBILE MENU BUTTON */
-
 .menu-button {
     display: none;
 
     background: none;
+
     border: none;
 
     color: white;
@@ -104,10 +131,13 @@ nav {
 /* HERO */
 
 .hero {
+
     min-height: 100vh;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
@@ -119,8 +149,7 @@ nav {
             circle at 50% 30%,
             rgba(108,99,255,0.18),
             transparent 35%
-        ),
-        #050509;
+        );
 }
 
 .hero-content {
@@ -130,6 +159,7 @@ nav {
 }
 
 .profile-pic {
+
     width: 190px;
     height: 190px;
 
@@ -148,6 +178,7 @@ nav {
 }
 
 .small-text {
+
     color: #6c63ff;
 
     letter-spacing: 4px;
@@ -158,7 +189,9 @@ nav {
 }
 
 h1 {
-    font-size: clamp(60px, 12vw, 120px);
+
+    font-size:
+        clamp(60px, 12vw, 120px);
 
     letter-spacing: 8px;
 
@@ -168,6 +201,7 @@ h1 {
 }
 
 .hero h2 {
+
     font-size: 25px;
 
     color: #ddd;
@@ -176,6 +210,7 @@ h1 {
 }
 
 .hero p {
+
     color: #999;
 
     font-size: 18px;
@@ -191,6 +226,7 @@ h1 {
 /* BUTTON */
 
 .button {
+
     display: inline-block;
 
     margin-top: 35px;
@@ -214,6 +250,7 @@ h1 {
 }
 
 .button:hover {
+
     transform: translateY(-5px);
 
     box-shadow:
@@ -224,6 +261,7 @@ h1 {
 /* SECTIONS */
 
 section {
+
     padding: 100px 8%;
 
     max-width: 1200px;
@@ -232,12 +270,14 @@ section {
 }
 
 .section-title {
+
     font-size: 40px;
 
     margin-bottom: 15px;
 }
 
 .section-line {
+
     width: 60px;
 
     height: 4px;
@@ -248,6 +288,7 @@ section {
 }
 
 .about-text {
+
     color: #aaa;
 
     font-size: 18px;
@@ -258,9 +299,97 @@ section {
 }
 
 
-/* PROJECT CARDS */
+/* SKILLS */
+
+.skills {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.skill {
+
+    background:
+        linear-gradient(
+            145deg,
+            #101017,
+            #08080d
+        );
+
+    border: 1px solid #20202c;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    transition: 0.3s;
+}
+
+.skill:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #6c63ff;
+
+    box-shadow:
+        0 15px 40px
+        rgba(108,99,255,0.15);
+}
+
+.skill h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+.skill p {
+
+    color: #999;
+
+    line-height: 1.7;
+}
+
+.skill-bar {
+
+    height: 6px;
+
+    background: #20202c;
+
+    border-radius: 10px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+}
+
+.skill-progress {
+
+    height: 100%;
+
+    width: 70%;
+
+    background: #6c63ff;
+
+    border-radius: 10px;
+
+    animation: grow 1.5s ease;
+}
+
+
+/* PROJECTS */
 
 .cards {
+
     display: grid;
 
     grid-template-columns:
@@ -273,6 +402,7 @@ section {
 }
 
 .card {
+
     background:
         linear-gradient(
             145deg,
@@ -293,11 +423,10 @@ section {
     color: white;
 
     display: block;
-
-    animation: fadeUp 0.8s ease forwards;
 }
 
 .card:hover {
+
     transform: translateY(-8px);
 
     border-color: #6c63ff;
@@ -308,18 +437,21 @@ section {
 }
 
 .card h3 {
+
     font-size: 22px;
 
     margin-bottom: 15px;
 }
 
 .card p {
+
     color: #999;
 
     line-height: 1.7;
 }
 
 .tag {
+
     display: inline-block;
 
     margin-top: 20px;
@@ -341,6 +473,7 @@ section {
 /* FOOTER */
 
 footer {
+
     text-align: center;
 
     padding: 50px 20px;
@@ -355,6 +488,7 @@ footer span {
 }
 
 .social-title {
+
     color: #6c63ff;
 
     letter-spacing: 3px;
@@ -369,6 +503,7 @@ footer span {
 }
 
 .social-links a {
+
     display: inline-block;
 
     color: #aaa;
@@ -387,6 +522,7 @@ footer span {
 }
 
 .social-links a:hover {
+
     color: #6c63ff;
 
     border-color: #6c63ff;
@@ -395,22 +531,36 @@ footer span {
 }
 
 
-/* ANIMATION */
+/* ANIMATIONS */
 
 @keyframes fadeUp {
 
     from {
+
         opacity: 0;
 
         transform: translateY(30px);
+
     }
 
     to {
+
         opacity: 1;
 
         transform: translateY(0);
+
+    }
+}
+
+@keyframes grow {
+
+    from {
+        width: 0;
     }
 
+    to {
+        width: 70%;
+    }
 }
 
 
@@ -431,9 +581,11 @@ footer span {
     }
 
     .nav-links {
+
         position: absolute;
 
         top: 70px;
+
         right: 5%;
 
         width: 180px;
@@ -449,9 +601,6 @@ footer span {
         border: 1px solid #20202c;
 
         border-radius: 15px;
-
-        box-shadow:
-            0 15px 40px rgba(0,0,0,0.5);
     }
 
     .nav-links.active {
@@ -459,6 +608,7 @@ footer span {
     }
 
     .nav-links a {
+
         margin: 10px 0;
 
         font-size: 15px;
@@ -496,27 +646,33 @@ footer span {
     <button
         class="menu-button"
         onclick="toggleMenu()"
-        aria-label="Open navigation menu"
     >
         ☰
     </button>
 
 
-    <div class="nav-links" id="navLinks">
+    <div
+        class="nav-links"
+        id="navLinks"
+    >
 
-        <a href="#home" onclick="closeMenu()">
+        <a href="#home">
             Home
         </a>
 
-        <a href="#about" onclick="closeMenu()">
+        <a href="#about">
             About
         </a>
 
-        <a href="#projects" onclick="closeMenu()">
+        <a href="#skills">
+            Skills
+        </a>
+
+        <a href="#projects">
             Projects
         </a>
 
-        <a href="contact.html" onclick="closeMenu()">
+        <a href="contact.html">
             Contact
         </a>
 
@@ -527,9 +683,13 @@ footer span {
 
 <!-- HERO -->
 
-<div class="hero" id="home">
+<div
+    class="hero"
+    id="home"
+>
 
     <div class="hero-content">
+
 
         <img
             src="me.jpg"
@@ -537,29 +697,45 @@ footer span {
             class="profile-pic"
         >
 
+
         <div class="small-text">
+
             WELCOME TO MY WORLD
+
         </div>
 
+
         <h1>
+
             CHANIEL
+
         </h1>
 
+
         <h2>
+
             CREATIVE • CODER • DREAMER
+
         </h2>
 
+
         <p>
+
             I'm learning to build things on the internet,
             explore creativity and turn ideas into reality.
+
         </p>
 
+
         <a
-            href="project.html"
+            href="#projects"
             class="button"
         >
+
             Explore My Work →
+
         </a>
+
 
     </div>
 
@@ -571,10 +747,13 @@ footer span {
 <section id="about">
 
     <h2 class="section-title">
+
         About Me
+
     </h2>
 
     <div class="section-line"></div>
+
 
     <p class="about-text">
 
@@ -590,15 +769,62 @@ footer span {
 </section>
 
 
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+
+        My Skills
+
+    </h2>
+
+    <div class="section-line"></div>
+
+
+    <div class="skills">
+
+
+        <div class="skill">
+
+            <h3>
+                🌐 HTML & CSS
+            </h3>
+
+            <p>
+
+                Building and styling websites while
+                learning the fundamentals of web design.
+
+            </p>
+
+
+            <div class="skill-bar">
+
+                <div class="skill-progress"></div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
 <!-- PROJECTS -->
 
 <section id="projects">
 
     <h2 class="section-title">
+
         My Projects
+
     </h2>
 
     <div class="section-line"></div>
+
 
     <div class="cards">
 
@@ -613,8 +839,10 @@ footer span {
             </h3>
 
             <p>
+
                 My first website created while learning
                 HTML and CSS.
+
             </p>
 
             <span class="tag">
@@ -635,8 +863,10 @@ footer span {
             </h3>
 
             <p>
+
                 A collection of things I'm learning as I
                 improve my web development skills.
+
             </p>
 
             <span class="tag">
@@ -657,8 +887,10 @@ footer span {
             </h3>
 
             <p>
+
                 More creative projects coming soon as
                 I continue developing my skills.
+
             </p>
 
             <span class="tag">
@@ -666,6 +898,7 @@ footer span {
             </span>
 
         </div>
+
 
     </div>
 
@@ -676,29 +909,41 @@ footer span {
 
 <footer>
 
+
     <div class="social-title">
+
         FIND ME ONLINE
+
     </div>
 
+
     <div class="social-links">
+
 
         <a
             href="https://www.instagram.com/chan.iel_/"
             target="_blank"
             rel="noopener noreferrer"
         >
+
             Instagram
+
         </a>
+
 
         <a
             href="https://github.com/chanieldev"
             target="_blank"
             rel="noopener noreferrer"
         >
+
             GitHub
+
         </a>
 
+
     </div>
+
 
     <p>
 
@@ -708,27 +953,20 @@ footer span {
 
     </p>
 
+
 </footer>
 
 
-<!-- MOBILE MENU SCRIPT -->
+<!-- MENU SCRIPT -->
 
 <script>
 
 function toggleMenu() {
 
-    const menu = document.getElementById("navLinks");
+    const menu =
+        document.getElementById("navLinks");
 
     menu.classList.toggle("active");
-
-}
-
-
-function closeMenu() {
-
-    const menu = document.getElementById("navLinks");
-
-    menu.classList.remove("active");
 
 }
 
