@@ -6,6 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Chaniel</title>
     <link rel="stylesheet" href="style.css">
+
+```
+<style>
+    .contact-page {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .contact-page h1 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-page p {
+        max-width: 600px;
+        margin-bottom: 35px;
+        line-height: 1.7;
+    }
+
+    .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .contact-links a {
+        display: inline-block;
+        padding: 15px 25px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-links a:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+    }
+</style>
+```
+
 </head>
 
 <body>
@@ -19,10 +66,12 @@
 </nav>
 
 <main class="contact-page">
+
     <h1>Let's Connect</h1>
 
     <p>
-        Want to get in touch? You can email me or find me on my social platforms.
+        Have a question, want to talk about a project, or just want to connect?
+        Find me through the links below.
     </p>
 
     <div class="contact-links">
@@ -31,15 +80,16 @@
             📧 Email Me
         </a>
 
-        <a href="https://github.com/chanieldev" target="_blank">
+        <a href="https://github.com/chanieldev" target="_blank" rel="noopener noreferrer">
             💻 GitHub
         </a>
 
-        <a href="https://instagram.com/chan.iel_" target="_blank">
+        <a href="https://instagram.com/chan.iel_" target="_blank" rel="noopener noreferrer">
             📸 Instagram
         </a>
 
     </div>
+
 </main>
 
 <script src="script.js"></script>
