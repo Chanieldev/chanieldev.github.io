@@ -1,16 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
+```javascript
+/* ========================================
+   SCROLL REVEAL
+======================================== */
 
-```
-// Fade sections in when they appear
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(
     (entries) => {
+
         entries.forEach((entry) => {
+
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
             }
+
         });
+
     },
     {
         threshold: 0.15
@@ -22,42 +27,88 @@ sections.forEach((section) => {
 });
 
 
-// Smooth scrolling for links on the same page
-document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+/* ========================================
+   ACTIVE NAVIGATION
+======================================== */
 
-    link.addEventListener("click", (event) => {
+const currentPage =
+    window.location.pathname.split("/").pop();
 
-        const target = document.querySelector(
-            link.getAttribute("href")
-        );
+const navLinks =
+    document.querySelectorAll(".nav-links a");
 
-        if (target) {
-            event.preventDefault();
+navLinks.forEach((link) => {
 
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
+    const linkPage =
+        link.getAttribute("href");
 
-    });
+    if (
+        linkPage === currentPage ||
+        (currentPage === "" &&
+        linkPage === "index.html")
+    ) {
+        link.classList.add("active");
+    }
 
 });
 
 
-// Small hover effect for project cards
-const cards = document.querySelectorAll(".project-card");
+/* ========================================
+   MOBILE MENU
+======================================== */
 
-cards.forEach((card) => {
+const menuToggle =
+    document.querySelector(".menu-toggle");
 
-    card.addEventListener("mouseenter", () => {
-        card.style.transform = "translateY(-8px)";
+const navLinksContainer =
+    document.querySelector(".nav-links");
+
+if (menuToggle && navLinksContainer) {
+
+    menuToggle.addEventListener("click", () => {
+
+        navLinksContainer.classList.toggle("open");
+
     });
 
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "translateY(0)";
+
+    const mobileLinks =
+        navLinksContainer.querySelectorAll("a");
+
+    mobileLinks.forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            navLinksContainer.classList.remove("open");
+
+        });
+
+    });
+
+}
+
+
+/* ========================================
+   BUTTON PRESS EFFECT
+======================================== */
+
+const buttons =
+    document.querySelectorAll(".btn");
+
+buttons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        button.style.transform =
+            "scale(0.97)";
+
+        setTimeout(() => {
+
+            button.style.transform = "";
+
+        }, 120);
+
     });
 
 });
 ```
-
-});
