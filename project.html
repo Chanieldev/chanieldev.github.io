@@ -1,146 +1,206 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Chaniel | Projects</title>
+    <title>Chaniel | Projects</title>
 
-<link rel="stylesheet" href="style.css">
-```
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-```
-<!-- NAVIGATION -->
+    <!-- Navigation -->
+    <nav class="navbar">
 
-<nav>
-    <div class="logo">CHANIEL.</div>
+        <a href="index.html" class="logo">
+            CEE<span>.</span>
+        </a>
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="project.html">Projects</a></li>
-    </ul>
-</nav>
-
-
-<!-- PROJECT HERO -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <p class="intro">MY WORK</p>
-
-        <h1>PROJECTS</h1>
-
-        <h2>Things I've Created</h2>
-
-        <p>
-            Here are some of the projects I'm working on
-            while learning web development.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section>
-
-    <h2>My Projects</h2>
-
-    <div class="projects">
-
-
-        <!-- PROJECT 1 -->
-
-        <div class="project-card">
-
-            <h3>Personal Website</h3>
-
-            <p>
-                My first personal website built using
-                HTML and CSS.
-            </p>
-
-            <br>
-
-            <a href="index.html" class="btn">
-                View Website
-            </a>
-
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="project.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
         </div>
 
-
-        <!-- PROJECT 2 -->
-
-        <div class="project-card">
-
-            <h3>Creative Web Design</h3>
-
-            <p>
-                Experiments with modern layouts,
-                animations and futuristic designs.
-            </p>
-
-        </div>
+    </nav>
 
 
-        <!-- PROJECT 3 -->
+    <!-- Projects -->
+    <main>
 
-        <div class="project-card">
+        <section class="projects-page">
 
-            <h3>More Coming Soon</h3>
+            <div class="projects-intro">
 
-            <p>
-                I'm continuing to learn and build more
-                projects. Check back soon.
-            </p>
+                <p class="section-label">MY WORK</p>
 
-        </div>
+                <h1>
+                    Selected <span>Projects.</span>
+                </h1>
 
+                <p>
+                    A collection of things I've created while learning
+                    web design and development.
+                </p>
 
-    </div>
-
-</section>
-
-
-<!-- BACK HOME -->
-
-<section>
-
-    <h2>Want to go back?</h2>
-
-    <a href="index.html" class="btn">
-        ← Back Home
-    </a>
-
-</section>
+            </div>
 
 
-<!-- FOOTER -->
-
-<footer>
-
-    <p>
-        © 2026 Chaniel. Built with HTML & CSS.
-    </p>
-
-</footer>
+            <!-- Project Grid -->
+            <div class="project-grid">
 
 
-<script src="script.js"></script>
-```
+                <!-- Project 01 -->
+                <article class="project-item">
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <div class="project-visual">
+                        <span>&lt;/&gt;</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            PERSONAL WEBSITE
+                        </p>
+
+                        <h2>
+                            My Portfolio
+                        </h2>
+
+                        <p>
+                            A personal portfolio website designed and
+                            built to showcase my skills, interests and
+                            development journey.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 02 -->
+                <article class="project-item">
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <div class="project-visual">
+                        <span>CSS</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            WEB DESIGN
+                        </p>
+
+                        <h2>
+                            Creative Landing Page
+                        </h2>
+
+                        <p>
+                            An experimental landing page focused on
+                            clean layouts, typography and modern
+                            visual design.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>DESIGN</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 03 -->
+                <article class="project-item">
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <div class="project-visual">
+                        <span>+</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            FUTURE PROJECT
+                        </p>
+
+                        <h2>
+                            Coming Soon
+                        </h2>
+
+                        <p>
+                            I'm constantly learning and working on
+                            new ideas. This space will be updated
+                            with my next project.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>LEARNING</span>
+                            <span>BUILDING</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- Bottom CTA -->
+            <div class="projects-cta">
+
+                <p class="section-label">
+                    MORE TO COME
+                </p>
+
+                <h2>
+                    I'm just getting started.
+                </h2>
+
+                <a href="contact.html" class="btn primary-btn">
+                    Get In Touch
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Chaniel. Built with HTML & CSS.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
 
 </html>
+```
