@@ -1,87 +1,15 @@
-```javascript
-/* ========================================
-   SCROLL REVEAL
-======================================== */
-
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.15
-    }
-);
-
-sections.forEach((section) => {
-    observer.observe(section);
-});
-
-
-/* ========================================
-   ACTIVE NAVIGATION
-======================================== */
-
-const currentPage =
-    window.location.pathname.split("/").pop();
-
-const navLinks =
-    document.querySelectorAll(".nav-links a");
-
-navLinks.forEach((link) => {
-
-    const linkPage =
-        link.getAttribute("href");
-
-    if (
-        linkPage === currentPage ||
-        (currentPage === "" &&
-        linkPage === "index.html")
-    ) {
-        link.classList.add("active");
-    }
-
-});
-
-
 /* ========================================
    MOBILE MENU
 ======================================== */
 
-const menuToggle =
-    document.querySelector(".menu-toggle");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-const navLinksContainer =
-    document.querySelector(".nav-links");
+if (menuToggle && navLinks) {
 
-if (menuToggle && navLinksContainer) {
+    menuToggle.addEventListener("click", function () {
 
-    menuToggle.addEventListener("click", () => {
-
-        navLinksContainer.classList.toggle("open");
-
-    });
-
-
-    const mobileLinks =
-        navLinksContainer.querySelectorAll("a");
-
-    mobileLinks.forEach((link) => {
-
-        link.addEventListener("click", () => {
-
-            navLinksContainer.classList.remove("open");
-
-        });
+        navLinks.classList.toggle("open");
 
     });
 
@@ -89,26 +17,42 @@ if (menuToggle && navLinksContainer) {
 
 
 /* ========================================
-   BUTTON PRESS EFFECT
+   CLOSE MENU AFTER CLICKING A LINK
 ======================================== */
 
-const buttons =
-    document.querySelectorAll(".btn");
+const links = document.querySelectorAll(".nav-links a");
 
-buttons.forEach((button) => {
+links.forEach(function (link) {
 
-    button.addEventListener("click", () => {
+    link.addEventListener("click", function () {
 
-        button.style.transform =
-            "scale(0.97)";
-
-        setTimeout(() => {
-
-            button.style.transform = "";
-
-        }, 120);
+        if (navLinks) {
+            navLinks.classList.remove("open");
+        }
 
     });
 
 });
-```
+
+
+/* ========================================
+   ACTIVE PAGE
+======================================== */
+
+const currentPage =
+    window.location.pathname.split("/").pop();
+
+links.forEach(function (link) {
+
+    const page = link.getAttribute("href");
+
+    if (
+        page === currentPage ||
+        (currentPage === "" && page === "index.html")
+    ) {
+
+        link.classList.add("active");
+
+    }
+
+});
