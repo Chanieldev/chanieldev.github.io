@@ -4,7 +4,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ---------- MOBILE MENU ---------- */
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
 
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
@@ -16,22 +18,29 @@ document.addEventListener("DOMContentLoaded", () => {
             navLinks.classList.toggle("active");
 
             if (navLinks.classList.contains("active")) {
+
                 menuToggle.innerHTML = "✕";
+
                 menuToggle.setAttribute(
                     "aria-label",
                     "Close navigation"
                 );
+
             } else {
+
                 menuToggle.innerHTML = "☰";
+
                 menuToggle.setAttribute(
                     "aria-label",
                     "Open navigation"
                 );
+
             }
 
         });
 
-        /* Close menu after clicking a link */
+
+        /* Close menu when a link is clicked */
 
         const links = navLinks.querySelectorAll("a");
 
@@ -55,43 +64,58 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ---------- SCROLL REVEAL ---------- */
+    /* =========================================
+       SCROLL REVEAL
+    ========================================= */
 
     const revealElements = document.querySelectorAll(
-        ".learning, .skill-card"
+        ".learning, .skill-card, .about-content, .about-card, .project-card"
     );
 
-    const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
+    if ("IntersectionObserver" in window) {
 
-            entries.forEach(entry => {
+        const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
 
-                if (entry.isIntersecting) {
+                entries.forEach(entry => {
 
-                    entry.target.classList.add("show");
+                    if (entry.isIntersecting) {
 
-                    observer.unobserve(entry.target);
+                        entry.target.classList.add("show");
 
-                }
+                        observer.unobserve(entry.target);
 
-            });
+                    }
 
-        },
-        {
-            threshold: 0.15
-        }
-    );
+                });
 
-    revealElements.forEach(element => {
-
-        element.classList.add("reveal");
-
-        revealObserver.observe(element);
-
-    });
+            },
+            {
+                threshold: 0.15
+            }
+        );
 
 
-    /* ---------- ACTIVE NAVIGATION ---------- */
+        revealElements.forEach(element => {
+
+            element.classList.add("reveal");
+
+            revealObserver.observe(element);
+
+        });
+
+    } else {
+
+        revealElements.forEach(element => {
+            element.classList.add("show");
+        });
+
+    }
+
+
+    /* =========================================
+       ACTIVE NAVIGATION
+    ========================================= */
 
     const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
@@ -117,7 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ---------- BUTTON CLICK EFFECT ---------- */
+    /* =========================================
+       BUTTON CLICK EFFECT
+    ========================================= */
 
     const buttons = document.querySelectorAll(".btn");
 
@@ -132,6 +158,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 button.style.transform = "";
 
             }, 120);
+
+        });
+
+    });
+
+
+    /* =========================================
+       PROJECT LINK EFFECT
+    ========================================= */
+
+    const projectLinks =
+        document.querySelectorAll(".project-link");
+
+    projectLinks.forEach(link => {
+
+        link.addEventListener("mouseenter", () => {
+
+            link.style.letterSpacing = "1px";
+
+        });
+
+        link.addEventListener("mouseleave", () => {
+
+            link.style.letterSpacing = "";
 
         });
 
