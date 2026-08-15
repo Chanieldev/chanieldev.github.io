@@ -1,9 +1,15 @@
 /* ========================================
-   MOBILE MENU
+   CHANIEL | WEBSITE JAVASCRIPT
+======================================== */
+
+
+/* ========================================
+   MOBILE NAVIGATION
 ======================================== */
 
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
+
 
 if (menuToggle && navLinks) {
 
@@ -17,17 +23,22 @@ if (menuToggle && navLinks) {
 
 
 /* ========================================
-   CLOSE MENU AFTER CLICKING A LINK
+   CLOSE MOBILE MENU
+   WHEN A LINK IS CLICKED
 ======================================== */
 
-const links = document.querySelectorAll(".nav-links a");
+const navigationLinks =
+    document.querySelectorAll(".nav-links a");
 
-links.forEach(function (link) {
+
+navigationLinks.forEach(function (link) {
 
     link.addEventListener("click", function () {
 
         if (navLinks) {
+
             navLinks.classList.remove("open");
+
         }
 
     });
@@ -36,23 +47,95 @@ links.forEach(function (link) {
 
 
 /* ========================================
-   ACTIVE PAGE
+   ACTIVE NAVIGATION LINK
 ======================================== */
 
 const currentPage =
     window.location.pathname.split("/").pop();
 
-links.forEach(function (link) {
 
-    const page = link.getAttribute("href");
+navigationLinks.forEach(function (link) {
+
+    const linkPage =
+        link.getAttribute("href");
+
 
     if (
-        page === currentPage ||
-        (currentPage === "" && page === "index.html")
+        linkPage === currentPage ||
+        (
+            currentPage === "" &&
+            linkPage === "index.html"
+        )
     ) {
 
         link.classList.add("active");
 
     }
+
+});
+
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+
+const sections =
+    document.querySelectorAll("section");
+
+
+const sectionObserver =
+    new IntersectionObserver(
+
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+
+sections.forEach(function (section) {
+
+    sectionObserver.observe(section);
+
+});
+
+
+/* ========================================
+   BUTTON PRESS EFFECT
+======================================== */
+
+const buttons =
+    document.querySelectorAll(".btn");
+
+
+buttons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        button.style.transform =
+            "scale(0.97)";
+
+
+        setTimeout(function () {
+
+            button.style.transform = "";
+
+        }, 120);
+
+    });
 
 });
